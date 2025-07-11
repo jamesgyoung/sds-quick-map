@@ -143,3 +143,16 @@ layout: defra.njk
         </p>
     </div>
 </div>
+
+<script>
+const basePath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href^="/"]').forEach(link => {
+    const href = link.getAttribute('href');
+    // Only update if it's an internal path (starts with / but not //)
+    if (href.startsWith('/') && !href.startsWith('//')) {
+      link.href = basePath + href;
+    }
+  });
+});
+</script>
