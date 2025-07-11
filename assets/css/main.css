@@ -8232,7 +8232,7 @@ since i'm using an image with a vertical bar i don't need this
 .defra-logo__link::before {
   content: "";
   display: table-cell;
-  background: url("../images/DEFRA_Lesser_Arms_Stacked__CMYK_colour.svg") no-repeat;
+  background: url("/sds-quick-map/assets/images/DEFRA_Lesser_Arms_Stacked__CMYK_colour.svg") no-repeat;
   background-size: 100% 100%;
   width: 207px;
   height: 113px;
