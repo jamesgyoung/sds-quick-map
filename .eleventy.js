@@ -41,7 +41,7 @@ export default function (eleventyConfig) {
       if (process.env.NODE_ENV === "production") {
         return content
           .replace(/href="\/support"(?!\/)/g, 'href="/sds-quick-map/support/"')
-          .replace(/href="\/terms-conditions"(?!\/)/g, 'href="/sds-quick-map/terms-cond itions/"')
+          .replace(/href="\/terms-conditions"(?!\/)/g, 'href="/sds-quick-map/terms-conditions/"')
           .replace(/href="\/"(?![a-z])/g, 'href="/sds-quick-map/"')
           .replace(/src="config\/site-config\.js"/g, 'src="/sds-quick-map/config/site-config.js"')
           .replace(/href="assets\/css\/main\.css"/g, 'href="/sds-quick-map/assets/css/main.css"');
