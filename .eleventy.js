@@ -35,6 +35,16 @@ export default function (eleventyConfig) {
   eleventyConfig.setLibrary("njk", nunjucks.configure({
     autoescape: false
   }));
+  eleventyConfig.addTransform("githubPages", function(content, outputPath) {
+    if (outputPath && outputPath.endsWith(".html") && process.env.GITHUB_PAGES) {
+      return content
+        .replace(/href="\/support"/g, 'href="/sds-quick-map/support/"')
+        .replace(/href="\/"/g, 'href="/sds-quick-map/"')
+        .replace(/src="config\/site-config\.js"/g, 'src="/sds-quick-map/config/site-config.js"')
+        .replace(/href="assets\/css\/main\.css"/g, 'href="/sds-quick-map/assets/css/main.css"');
+    }
+    return content;
+  });
   return {
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',

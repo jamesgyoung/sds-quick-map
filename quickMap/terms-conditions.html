@@ -1,17 +1,6 @@
 ---
 layout: defra.njk
 ---
-<script>
-let bsPath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('a[href^="/"]').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href.startsWith('/') && !href.startsWith('//')) {
-      link.href = bsPath + href;
-    }
-  });
-});
-</script>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
