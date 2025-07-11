@@ -1,3 +1,11 @@
+<script>
+const Path = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
+</script>
+
+<a href="#" id="homepage-link" title="Go to the homepage">
+<script>
+document.getElementById('homepage-link').href = Path + '/';
+</script>
 <header class="defra-internal-header" role="banner">
   <div class="govuk-width-container">
     <div class="defra-logo">
