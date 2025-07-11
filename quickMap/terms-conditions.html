@@ -2,7 +2,7 @@
 layout: defra.njk
 ---
 <script>
-const bsPath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
+let bsPath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('a[href^="/"]').forEach(link => {
     const href = link.getAttribute('href');
