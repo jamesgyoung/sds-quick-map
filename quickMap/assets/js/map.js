@@ -42,7 +42,7 @@ class MapGenerator {
   async initGDAL() {
     this.gdal = await window.initGdalJs({ 
       //path: './assets/js/gdal3.js',
-      path: "https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js",
+      path: "https://cdn.jsdelivr.net/npm/gdal3.js@2.8.1/dist/package",
       useWorker: false 
     });
   }
