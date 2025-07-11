@@ -36,17 +36,20 @@ export default function (eleventyConfig) {
     autoescape: false
   }));
 
-  eleventyConfig.addTransform("fixPaths", function(content, outputPath) {
-    if (outputPath && outputPath.endsWith(".html")) {
-      return content
-        .replace(/href="\/support"/g, 'href="/sds-quick-map/support/"')
-        .replace(/href="\/"/g, 'href="/sds-quick-map/"')
-        .replace(/src="config\/site-config\.js"/g, 'src="/sds-quick-map/config/site-config.js"')
-        .replace(/href="assets\/css\/main\.css"/g, 'href="/sds-quick-map/assets/css/main.css"');
-    }
-    return content;
+  eleventyConfig.addTransform("githubPages", function(content, outputPath) {
+    if (outputPath && outputPath.endsWith(".html") && process.env.GITHUB_PAGES) {
+    const newContent = content
+      .replace(/href="\/support"/g, 'href="/sds-quick-map/support/"')
+      .replace(/href="\/terms-conditions"/g, 'href="/sds-quick-map/terms-conditions/"')
+      .replace(/href="\/"/g, 'href="/sds-quick-map/"')
+      .replace(/src="config\/site-config\.js"/g, 'src="/sds-quick-map/config/site-config.js"')
+      .replace(/href="assets\/css\/main\.css"/g, 'href="/sds-quick-map/assets/css/main.css"');
+    return newContent;
+  }
+  
+  return content;
   });
- 
+  
   return {
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
