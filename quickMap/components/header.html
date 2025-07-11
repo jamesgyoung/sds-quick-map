@@ -1,0 +1,31 @@
+<header class="defra-internal-header" role="banner">
+  <div class="govuk-width-container">
+    <div class="defra-logo">
+        <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs" title="Go to the Defra homepage" class="defra-logo__link">
+          <span class="c-defra-logo__title govuk-visually-hidden">Department for Environment Food &amp; Rural Affairs</span>
+        </a>
+    </div>
+
+    <div class="defra-internal-service-name">
+        <a href="/" title="Go to the homepage" class="defra-internal-service-name__link" id="service-name-link"></a>
+    </div>
+  </div>
+</header>
+
+<div class="govuk-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag" id="phase-tag">
+      </strong>
+      <span class="govuk-phase-banner__text" id="phase-text">
+      </span>
+    </p>
+  </div>
+</div>
+ 
+<script>
+  document.getElementById('service-name-link').textContent = siteConfig.serviceName;
+  document.getElementById('phase-tag').textContent = siteConfig.phase;
+  document.getElementById('phase-text').innerHTML = siteConfig.phaseBannerText;
+</script>
+
