@@ -4,6 +4,8 @@ A Minimum Viable Product (MVP) for creating simple England scoped maps quickly.
 
 - Owner: James Young
 - Contact: james.young@defra.gov.uk
+- Repository: https://github.com/jamesgyoung/sds-quick-map
+- Website: https://jamesgyoung.github.io/sds-quick-map/
 
 ### Usage
 
