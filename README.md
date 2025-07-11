@@ -67,6 +67,9 @@ The project board is the core project management tool for understanding the curr
 
 ![](assets/images/project-board.png)
 
+### Code management
+
+Tasks are worked on from distinct branches. They named use the convention `issue-{issue-number}`. When a task is completed a pull request can be opened that can merge a task branch into the master project branch.
 
 ### Risk Register
 

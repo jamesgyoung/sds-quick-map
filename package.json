@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "govuk-frontend": "^5.11.0",
+    "d3": "^7.9.0",
+    "gdal3.js": "^2.8.1",
+    "sass": "^1.89.2"
+  },
+  "name": "sds-quick-map",
+  "version": "0.0.1",
+  "description": "Create simple maps in the browser quickly.",
+  "main": ".eleventy.js",
+  "scripts": {
+    "prestart": "npm run clean",
+    "start": "npm run dev:eleventy",
+    "dev:eleventy": "npx eleventy --serve --incremental",
+    "build": "npm run prod:eleventy",
+    "prod:eleventy": "npx eleventy",
+    "clean": "rm -rf dist",
+    "test": "jest",
+    "lint:js": "npx eslint 'src/**/*.js'",
+    "lint:scss": "npx stylelint 'src/**/*.scss'"
+  },
+  "author": "james.young@defra.gov.uk",
+  "license": "MIT"
+}
