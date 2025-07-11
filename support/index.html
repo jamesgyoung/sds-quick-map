@@ -2,11 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-<script>
-    const basePath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
-    document.write('<link href="' + basePath + '/assets/css/main.css" rel="stylesheet">');
-    document.write('<script src="' + basePath + '/config/site-config.js"><\/script>');
-</script>
 </head>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
@@ -14,7 +9,7 @@
 <body>
     <div id="header-container"></div>
     <script>
-        fetch(`${basePath}/components/header.html`)
+        fetch('components/header.html')
             .then(response => response.text())
             .then(data => {
                 const fragment = document.createRange().createContextualFragment(data);
@@ -64,7 +59,7 @@
 g
 
     <script>
-        fetch(`${basePath}/components/footer.html`)
+        fetch('components/footer.html')
             .then(response => response.text())
             .then(data => {
             //    document.getElementById('footer-container').innerHTML = data;
