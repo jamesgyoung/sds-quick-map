@@ -60,9 +60,11 @@ class MapGenerator {
   }
 
   async loadBaseData() {
-    const response = await fetch('/sds-quick-map/data/Countries_December_2024_Boundaries_UK_BUC.gpkg');
-    const file = new File([await response.blob()], "Countries_December_2024_Boundaries_UK_BUC.gpkg");
     
+    const basePath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
+    const response = await fetch(`${basePath}/data/Countries_December_2024_Boundaries_UK_BUC.gpkg`);
+    const file = new File([await response.blob()], "Countries_December_2024_Boundaries_UK_BUC.gpkg");
+
     const result = await this.gdal.open(file);
     const dataset = result.datasets[0];
     

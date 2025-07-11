@@ -69,4 +69,14 @@
 
 <script>
 document.getElementById('copyright-year').textContent = new Date().getFullYear();
+const bPath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href^="/"]').forEach(link => {
+    const href = link.getAttribute('href');
+    // Only update if it's an internal path (starts with / but not //)
+    if (href.startsWith('/') && !href.startsWith('//')) {
+      link.href = bPath + href;
+    }
+  });
+});
 </script>
