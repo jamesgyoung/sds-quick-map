@@ -34,3 +34,57 @@ layout: defra.njk
   </label>
   <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file" accept=".gpkg,.shp,.geojson,.json,.kml">
 </div>-->
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Figure Size
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="figure-size-a3" name="figureSize" type="radio" value="a3">
+        <label class="govuk-label govuk-radios__label" for="figure-size-a3">
+          A3
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="figure-size-a4" name="figureSize" type="radio" value="a4">
+        <label class="govuk-label govuk-radios__label" for="figure-size-a4">
+          A4
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="figure-size-a5" name="figureSize" type="radio" value="a5">
+        <label class="govuk-label govuk-radios__label" for="figure-size-a5">
+          A5
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+<fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+      Figure details
+    </h1>
+  </legend>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="figure-title">
+      Title:
+    </label>
+    <input class="govuk-input" id="figure-title" name="figureTitle" type="text">
+  </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="attribution-statement">
+      Attribution statement:
+    </label>
+    <input class="govuk-input" id="attribution-statement" name="attributionStatement" type="text">
+  </div>
+</fieldset>
+
+</body>
