@@ -45,6 +45,5 @@ export default function (eleventyConfig) {
       includes: "_includes",
 
     },
-    pathPrefix: "/sds-quick-map/",
   }
 };
