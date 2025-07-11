@@ -19,7 +19,7 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Build
-        run: GITHUB_PAGES=true npm run build
+        run: NODE_ENV=production npm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:

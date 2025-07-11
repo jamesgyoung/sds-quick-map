@@ -37,7 +37,7 @@ export default function (eleventyConfig) {
   }));
 
   eleventyConfig.addTransform("githubPages", function(content, outputPath) {
-    if (outputPath && outputPath.endsWith(".html") && process.env.GITHUB_PAGES) {
+    if (outputPath && outputPath.endsWith(".html")) {
     const newContent = content
       .replace(/href="\/support"/g, 'href="/sds-quick-map/support/"')
       .replace(/href="\/terms-conditions"/g, 'href="/sds-quick-map/terms-conditions/"')
