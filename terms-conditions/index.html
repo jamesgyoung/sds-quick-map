@@ -25,7 +25,7 @@
     <div class="govuk-width-container">
         <main class="govuk-main-wrapper" id="main-content" role="main">
             <script>
-const bsPath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
+let bsPath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('a[href^="/"]').forEach(link => {
     const href = link.getAttribute('href');
