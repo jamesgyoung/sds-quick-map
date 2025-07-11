@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+<script>
+    const basePath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
+    document.write('<link href="' + basePath + '/assets/css/main.css" rel="stylesheet">');
+    document.write('<script src="' + basePath + '/config/site-config.js"><\/script>');
+</script>
 </head>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
@@ -109,7 +114,7 @@
         <li>in order to comply with data protection legislation covering the rights and freedoms of individuals</li>
         <li>if it breaches copyright laws, contains sensitive personal data or material that may be considered obscene or defamatory</li>
         </ul>
-        <a href="/sds-quick-map/support/">Contact us</a> to ask for content to be removed. You’ll need to send us the web address (URL) of the content and explain why you think it should be removed. We’ll reply to let you know whether we’ll remove it.
+        <a href="/support">Contact us</a> to ask for content to be removed. You’ll need to send us the web address (URL) of the content and explain why you think it should be removed. We’ll reply to let you know whether we’ll remove it.
         </p>
         <p>
         We remove content at our discretion in discussion with the department or agency responsible for it. You can still request information under the <a href="https://www.gov.uk/make-a-freedom-of-information-request">Freedom of Information Act</a> and the <a href="https://www.gov.uk/data-protection">Data Protection Act</a>.
