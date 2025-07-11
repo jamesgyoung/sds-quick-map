@@ -1,0 +1,117 @@
+@use "node_modules/govuk-frontend/dist/govuk/all" as *;
+
+$defra-brand-colour: #00a33b;
+// $defra-brand-contrast-safe-colour: #008531;
+
+// since this won't be a `*.gov.uk` service, enforce use of arial (instead of GDS Transport by govuk classes)
+// html, body {
+* {
+    font-family: Arial, sans-serif !important;
+}
+
+// header
+.defra-internal-header {
+    padding: 20px 0 18px;
+    border-bottom: 8px solid $defra-brand-colour;
+
+}
+
+@media (min-width: 48.0625em) {
+    .defra-internal-header {
+        display: table;
+        width: 100%;
+        min-height: 35px;
+    }
+}
+
+.defra-internal-header .defra-logo {
+    min-width: 275px;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 48.0625em) {
+    .defra-internal-header .defra-logo {
+        display: table-cell;
+        width: 33.33%;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 48.0625em) {
+    .defra-internal-service-name {
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 2em;
+    }
+}
+
+.defra-internal-service-name__link {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.1s ease;
+}
+
+.defra-internal-service-name__link:link,
+.defra-internal-service-name__link:visited {
+    color: $govuk-text-colour
+}
+.defra-internal-service-name__link:hover {
+    border-bottom-color: currentColor;
+}
+
+/*
+since i'm using an image with a vertical bar i don't need this
+.defra-logo {
+    border-left: 2px solid $defra-brand-colour;
+    padding-left: 8px;
+}
+*/
+
+.defra-logo__link {
+    display: table;
+}
+
+.defra-logo__link::before {
+    content: '';
+    display: table-cell;
+    background: url("../images/DEFRA_Lesser_Arms_Stacked__CMYK_colour.svg") no-repeat;
+    background-size: 100% 100%;
+    width: 207px;
+    height: 113px;
+}
+
+.defra-logo__link:link,
+.defra-logo__link:visited {
+    text-decoration: none;
+    font-size: 20px;
+    color: $govuk-text-colour;
+}
+
+.defra-img {
+    border: 1px solid $govuk-border-colour;
+    width: 100%;
+    margin: 10px 0 40px;
+}
+
+.govuk-footer {
+    border-top: 1px solid #a1acb2;
+}
+.govuk-footer * {
+    color: #454a4c;
+}
+.govuk-footer a:link,
+.govuk-footer a:visited {
+    color: #454a4c;
+}
+.govuk-footer__copyright-logo, #copyright-year {
+    color: #6e777a !important;
+}
+.govuk-footer a:hover {
+    color: $govuk-text-colour;
+}
+// govuk uses a thicker text underline
+//     border-bottom: 1px solid #0b0c0c;
+//     text-decoration: none;
+// }
