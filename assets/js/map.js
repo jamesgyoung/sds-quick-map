@@ -60,7 +60,7 @@ class MapGenerator {
   }
 
   async loadBaseData() {
-    const response = await fetch('/data/Countries_December_2024_Boundaries_UK_BUC.gpkg');
+    const response = await fetch('./data/Countries_December_2024_Boundaries_UK_BUC.gpkg');
     const file = new File([await response.blob()], "Countries_December_2024_Boundaries_UK_BUC.gpkg");
     
     const result = await this.gdal.open(file);
