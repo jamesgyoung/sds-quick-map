@@ -87,4 +87,21 @@ layout: defra.njk
   </div>
 </fieldset>
 
+<button type="button" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" id="generate-figure">
+  Generate figure
+</button>
+
+<div id="canvas-container" class="govuk-!-margin-top-4" style="display: none;">
+  <canvas id="map-canvas"></canvas>
+</div>
+
+<div class="govuk-button-group" id="download-buttons" style="display: none;">
+  <button type="button" class="govuk-button" data-module="govuk-button" id="download-png">
+    Download PNG
+  </button>
+  <button type="button" class="govuk-button" data-module="govuk-button" id="download-jpeg">
+    Download JPEG
+  </button>
+</div>
+
 </body>
