@@ -41,7 +41,7 @@ class MapGenerator {
 
   async initGDAL() {
     this.gdal = await window.initGdalJs({ 
-      path: '/assets/js/gdal3.js',
+      path: 'assets/js/gdal3.js',
       useWorker: false 
     });
   }
