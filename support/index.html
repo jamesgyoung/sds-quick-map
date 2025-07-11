@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="../assets/css/main.css" rel="stylesheet">
+    <script src="../config/site-config.js"></script>
+</head>
+
+<body>
+    <div id="header-container"></div>
+    <script>
+        fetch('../components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const fragment = document.createRange().createContextualFragment(data);
+                document.getElementById('header-container').appendChild(fragment);
+            });
+    </script>
+
+    <div class="govuk-width-container">
+        <main class="govuk-main-wrapper" id="main-content" role="main">
+            
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+    Support
+    </h1>
+
+    <h2>
+    Github
+    </h2>
+    <p>
+    To ask a question or request a feature, participate on 
+    <script>
+    const link = document.createElement('a');
+    link.href = siteConfig.serviceHome;
+    link.textContent = 'Github';
+    document.currentScript.parentElement.appendChild(link);
+    </script>.
+    </p>
+    <h2>
+    Email
+    </h2>
+    <p>
+    <script>
+    const email_link = document.createElement('a');
+    email_link.href = 'mailto:' + siteConfig.contact;
+    email_link.textContent = siteConfig.contact;
+    document.currentScript.parentElement.appendChild(email_link);
+    </script>
+    </p>
+
+        </main>
+    </div>
+
+
+    <div id="footer-container"></div>
+
+
+    <script>
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+            //    document.getElementById('footer-container').innerHTML = data;
+            const fragment = document.createRange().createContextualFragment(data);
+                document.getElementById('footer-container').appendChild(fragment);
+            });
+    </script>
+</body>
+</html>
