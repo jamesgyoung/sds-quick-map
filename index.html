@@ -23,7 +23,7 @@
 <script type="module">
   //import { initAll } from '/dist/govuk/govuk-frontend.min.js'
   //initAll()
-  import { FileUpload } from '/node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js'
+  import { FileUpload } from 'node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js'
   const fileUploads = document.querySelectorAll('[data-module="govuk-file-upload"]')
   fileUploads.forEach(fileUpload => {
     new FileUpload(fileUpload)
