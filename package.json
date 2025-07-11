@@ -27,7 +27,7 @@
     "start": "npm run dev:eleventy",
     "dev:eleventy": "npx eleventy --serve --incremental",
     "build": "npm run prod:eleventy",
-    "build:github": "npm run prod:eleventy -- --pathprefix=/sds-quick-map/",
+    "build:github": "npm run prod:eleventy --pathprefix=/sds-quick-map/",
     "prod:eleventy": "npx eleventy",
     "clean": "rm -rf dist",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
