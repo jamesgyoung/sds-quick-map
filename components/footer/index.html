@@ -26,12 +26,12 @@
         <h2 class="govuk-visually-hidden">Support links</h2>
         <ul class="govuk-footer__inline-list">
           <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="/terms-conditions">
+            <a class="govuk-footer__link" href="/sds-quick-map/terms-cond itions/">
               Terms and Conditions
             </a>
           </li>
           <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="/support">
+            <a class="govuk-footer__link" href="/sds-quick-map/support/">
               Support
             </a>
           </li>
@@ -69,14 +69,4 @@
 
 <script>
 document.getElementById('copyright-year').textContent = new Date().getFullYear();
-const bPath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('a[href^="/"]').forEach(link => {
-    const href = link.getAttribute('href');
-    // Only update if it's an internal path (starts with / but not //)
-    if (href.startsWith('/') && !href.startsWith('//')) {
-      link.href = bPath + href;
-    }
-  });
-});
 </script>
