@@ -29,6 +29,8 @@ class MapGenerator {
         height: Math.round(210 * MM_TO_INCHES * DEFAULT_DPI) 
       }
     };
+
+    this.urlBasePath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
     
     this.init();
   }
@@ -41,11 +43,14 @@ class MapGenerator {
 
   async initGDAL() {
     this.gdal = await window.initGdalJs({ 
-      path: './assets/js/gdal3.js',
+      path: `${this.urlbasePath}/assets/js/gdal3.js`,
+      // path: './assets/js/gdal3.js',
       // path: "https://cdn.jsdelivr.net/npm/gdal3.js@2.8.1/dist/package",
       useWorker: false 
     });
   }
+
+  
 
   bindEvents() {
     const fileUpload = document.querySelector('.govuk-drop-zone input[type="file"]');
@@ -61,8 +66,8 @@ class MapGenerator {
 
   async loadBaseData() {
     
-    let urlBasePath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
-    const response = await fetch(`${urlBasePath}/data/Countries_December_2024_Boundaries_UK_BUC.gpkg`);
+    // let urlBasePath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
+    const response = await fetch(`${this.urlBasePath}/data/Countries_December_2024_Boundaries_UK_BUC.gpkg`);
     const file = new File([await response.blob()], "Countries_December_2024_Boundaries_UK_BUC.gpkg");
 
     const result = await this.gdal.open(file);
