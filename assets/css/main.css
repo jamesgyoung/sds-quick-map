@@ -8272,6 +8272,13 @@ since i'm using an image with a vertical bar i don't need this
   color: #0b0c0c;
 }
 
-.govuk-footer__copyright-logo {
-  mask-image: url("../images/royal-coat-of-arms-lesser-arms-4.svg") !important;
+.govuk-footer__copyright-logo::before {
+  background-image: url("../images/royal-coat-of-arms-lesser-arms-4.svg") !important;
+}
+
+@supports (-webkit-mask-position: initial) or (mask-position: initial) {
+  .govuk-footer__copyright-logo::before {
+    -webkit-mask-image: url("../images/royal-coat-of-arms-lesser-arms-4.svg") !important;
+    mask-image: url("../images/royal-coat-of-arms-lesser-arms-4.svg") !important;
+  }
 }
