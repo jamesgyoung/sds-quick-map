@@ -117,5 +117,5 @@ since i'm using an image with a vertical bar i don't need this
 // }
 
 .govuk-footer__copyright-logo {
-  background-image: url("../images/royal-coat-of-arms-lesser-arms-4.svg") !important;
+    mask-image: url("../images/royal-coat-of-arms-lesser-arms-4.svg") !important;
 }

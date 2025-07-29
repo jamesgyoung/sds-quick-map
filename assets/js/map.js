@@ -1,6 +1,9 @@
 import { isFileTypeSupported, processGeospatialFile } from './fileHandler.js';
 import { calculateBounds, createBoundingBox } from './geometryUtils.js';
 
+
+let urlBasePath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
+
 class MapGenerator {
   constructor() {
     this.baseData = null;
@@ -30,8 +33,6 @@ class MapGenerator {
       }
     };
 
-    this.urlBasePath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
-    
     this.init();
   }
 
@@ -43,7 +44,7 @@ class MapGenerator {
 
   async initGDAL() {
     this.gdal = await window.initGdalJs({ 
-      path: `${this.urlbasePath}/assets/js/gdal3.js`,
+      path: `${urlbasePath}/assets/js/gdal3.js`,
       // path: './assets/js/gdal3.js',
       // path: "https://cdn.jsdelivr.net/npm/gdal3.js@2.8.1/dist/package",
       useWorker: false 
@@ -66,8 +67,7 @@ class MapGenerator {
 
   async loadBaseData() {
     
-    // let urlBasePath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
-    const response = await fetch(`${this.urlBasePath}/data/Countries_December_2024_Boundaries_UK_BUC.gpkg`);
+    const response = await fetch(`${urlBasePath}/data/Countries_December_2024_Boundaries_UK_BUC.gpkg`);
     const file = new File([await response.blob()], "Countries_December_2024_Boundaries_UK_BUC.gpkg");
 
     const result = await this.gdal.open(file);
