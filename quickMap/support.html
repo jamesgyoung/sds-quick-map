@@ -3,32 +3,33 @@ layout: defra.njk
 ---
 
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+        Support
+        </h1>
 
-    <h1 class="govuk-heading-l">
-    Support
-    </h1>
-
-    <h2>
-    Github
-    </h2>
-    <p>
-    To ask a question or request a feature, participate on 
-    <script>
-    const link = document.createElement('a');
-    link.href = siteConfig.serviceHome;
-    link.textContent = 'Github';
-    document.currentScript.parentElement.appendChild(link);
-    </script>.
-    </p>
-    <h2>
-    Email
-    </h2>
-    <p>
-    <script>
-    const email_link = document.createElement('a');
-    email_link.href = 'mailto:' + siteConfig.contact;
-    email_link.textContent = siteConfig.contact;
-    document.currentScript.parentElement.appendChild(email_link);
-    </script>
-    </p>
+        <h2>
+        Github
+        </h2>
+        <p>
+        To ask a question or request a feature, participate on 
+        <script>
+        const link = document.createElement('a');
+        link.href = siteConfig.serviceHome;
+        link.textContent = 'Github';
+        document.currentScript.parentElement.appendChild(link);
+        </script>.
+        </p>
+        <h2>
+        Email
+        </h2>
+        <p>
+        <script>
+        const email_link = document.createElement('a');
+        email_link.href = 'mailto:' + siteConfig.contact;
+        email_link.textContent = siteConfig.contact;
+        document.currentScript.parentElement.appendChild(email_link);
+        </script>
+        </p>
+    </div>
+</div>

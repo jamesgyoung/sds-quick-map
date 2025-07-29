@@ -12,8 +12,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "node_modules/govuk-frontend/dist/govuk/assets": "assets",
     "node_modules/govuk-frontend/dist/govuk": "/node_modules/govuk-frontend/dist/govuk",
-    //"node_modules/gdal3.js/dist/package": "assets/js/gdal3.js",
-    //  "node_modules/d3/dist/": "assets/js/d3",    
+    "node_modules/gdal3.js/dist/package": "assets/js/gdal3.js",
+    "node_modules/d3/dist/": "assets/js/d3",    
   });
 
   eleventyConfig.addTemplateFormats("scss");

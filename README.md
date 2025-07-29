@@ -9,24 +9,24 @@ A Minimum Viable Product (MVP) for creating simple England scoped maps quickly.
 
 ### Usage
 
-This service is hosted on [github pages](https://jamesgyoung.github.io/sds-quick-map/). It can be also be run locally.
+This service is hosted on [github pages](https://jamesgyoung.github.io/sds-quick-map/). It can also be run locally.
 
 ### User Documentation
 
 ![](assets/images/home.png)
 
 
-1. To use the tool, choose a a spatial file that is approximately within the scope of England. If you don't have such a file there is [test file](https://github.com/jamesgyoung/sds-quick-map/blob/master/quickMap/data/england-buc-2024-4326.gpkg) suitable in the repo.
+1. To use the tool, choose or drag and drop a spatial file that is approximately within the scope of England. If you don't have such a file there is a [test file](https://github.com/jamesgyoung/sds-quick-map/blob/master/quickMap/data/england-buc-2024-4326.gpkg) suitable in the repo.
 
 ![](assets/images/file-selection.png)
 
-2. Choose a figure size using the radio buttons
-3. Optionally enter a title and attribution statement
-4. Press the generate button
+2. Choose a figure size using the radio buttons.
+3. Optionally enter a title and attribution statement.
+4. Press the 'Generate Figure' button.
 
 ![](assets/images/generation.png)
 
-5. Click 'Download PNG' or 'Download JPEG' to download the map.
+5. Click the 'Download PNG' button or 'Download JPEG' button to download the map.
 
 ![](assets/images/result.png)
 
@@ -43,7 +43,7 @@ This service is hosted on [github pages](https://jamesgyoung.github.io/sds-quick
 2. `npm install`
 3. `npm start`
 4. View the local port that is opened `http://localhost:8080` or an alternate port if in use.
-5. To run the tests run `npm test`
+5. To run the tests execute `npm test`.
 
 
 ### Repo Structure
@@ -54,8 +54,8 @@ This service is hosted on [github pages](https://jamesgyoung.github.io/sds-quick
 - \*dist: The build location for the site
 - \*node_modules: Installed packages to run the application
 - .eleventy.js: Elevnty configuration
-- .gitconfig: Entries to not commit
-- .nojekyll: Do not use jekyll during the pages build process
+- .gitconfig: Local entries not to be included in the upstream repo
+- .nojekyll: Skip jekyll during the pages build process
 - LICENCE
 - README.md
 - package-lock.json
@@ -122,7 +122,7 @@ The project board is the core project management tool for understanding the curr
 
 ### Code management
 
-Tasks are worked on from distinct branches. They named use the convention `issue-{issue-number}`. When a task is completed a pull request can be opened that can merge a task branch into the master project branch.
+Tasks are worked on from distinct branches. Branches are named using the convention `issue-{issue-number}`. When a task is completed a pull request can be opened that can merge a task-branch into the master project branch.
 
 ### Risk Register
 

@@ -116,6 +116,13 @@ since i'm using an image with a vertical bar i don't need this
 //     text-decoration: none;
 // }
 
-.govuk-header__logotype-crown {
-  background-image: url('/sds-quick-map/assets/images/royal-coat-of-arms-lesser-arms-4.svg') !important;
+.govuk-footer__copyright-logo::before {
+    background-image: url("../images/royal-coat-of-arms-lesser-arms-4.svg") !important;
+}
+
+@supports (-webkit-mask-position: initial) or (mask-position: initial) {
+    .govuk-footer__copyright-logo::before {
+        -webkit-mask-image: url("../images/royal-coat-of-arms-lesser-arms-4.svg") !important;
+        mask-image: url("../images/royal-coat-of-arms-lesser-arms-4.svg") !important;
+    }
 }
