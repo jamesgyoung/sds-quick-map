@@ -8273,5 +8273,5 @@ since i'm using an image with a vertical bar i don't need this
 }
 
 .govuk-header__logotype-crown {
-  background-image: url("/sds-quick-map/assets/images/royal-coat-of-arms-lesser-arms-4.svg") !important;
+  background-image: url("../images/royal-coat-of-arms-lesser-arms-4.svg") !important;
 }
