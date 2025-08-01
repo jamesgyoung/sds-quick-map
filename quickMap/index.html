@@ -11,10 +11,6 @@ layout: defra.njk
     new FileUpload(fileUpload)
   })
 </script>
-<!--<script src="assets/js/gdal3.js/gdal3.js"></script>
-<script src="assets/js/d3/d3.min.js"></script>-->
-
-
 
 <body class="govuk-frontend-supported">
 <div class="govuk-form-group">
@@ -24,17 +20,9 @@ layout: defra.njk
   <div
     class="govuk-drop-zone"
     data-module="govuk-file-upload">
-    <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file" accept=".gpkg,.shp,.geojson,.json,.kml">
+    <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file" webkitdirectory multiple accept=".gpkg,.geojson,.json,.kml,.shp,.shx,.dbf,.prj,.sbn,.sbx,.fbn,.fbx,.ain,.aih,.atx,.ixs,.mxs,.xml,.cpg">
   </div>
 </div>
-
-<!--<div class="govuk-form-group">
-  <label class="govuk-label" for="file-upload-1">
-    <h1 class="govuk-heading-l">Upload a geospatial file</h1>
-  </label>
-  <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file" accept=".gpkg,.shp,.geojson,.json,.kml">
-</div>-->
-
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">

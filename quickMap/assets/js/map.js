@@ -1,4 +1,4 @@
-import { isFileTypeSupported, processGeospatialFile } from './fileHandler.js';
+import { isFileTypeSupported, processGeospatialFile, validateShapefile } from './fileHandler.js';
 import { calculateBounds, createBoundingBox } from './geometryUtils.js';
 
 
@@ -51,8 +51,6 @@ class MapGenerator {
     });
   }
 
-  
-
   bindEvents() {
     const fileUpload = document.querySelector('.govuk-drop-zone input[type="file"]');
     const generateBtn = document.getElementById('generate-figure');
@@ -83,9 +81,27 @@ class MapGenerator {
   }
 
   async handleFileUpload(event) {
-    const file = event.currentTarget.files[0];
-    if (!file) return;
+    let files = Array.from(event.currentTarget.files);
+    if (!files.length) return;
+    
+    const validation = validateShapefile(files);
+    if (!validation.isValid) {
+      alert(`Error: ${validation.errorMessage}`);
+      return;
+    }
+    files = validation.validFiles;
+    
+    if (files.length > 1) {
+    try {
+      this.userData = await processGeospatialFile(this.gdal, files);
+    } catch (error) {
+      console.error('Error processing files:', error);
+      alert('Error processing files: ' + error.message);
+    }
+    return;
+    }
 
+    const file = files[0];
     if (!isFileTypeSupported(file.name)) {
       alert('Unsupported file type. Please upload: .gpkg, .shp, .geojson, .json, .kml');
       return;
