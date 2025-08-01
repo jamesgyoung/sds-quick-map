@@ -45,6 +45,7 @@ describe('File Handler - Core Logic', () => {
     test('should handle GeoJSON files directly', async () => {
       const mockGeoJson = {
         type: 'FeatureCollection',
+        crs: { properties: { name: 'EPSG:27700' } },
         features: [{ type: 'Feature' }],
       };
       const file = new File([JSON.stringify(mockGeoJson)], 'test.geojson');

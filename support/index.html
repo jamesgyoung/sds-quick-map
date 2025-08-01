@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-<script>
-    const basePath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
-    document.write('<link href="' + basePath + '/assets/css/main.css" rel="stylesheet">');
-    document.write('<script src="' + basePath + '/config/site-config.js"><\/script>');
-    document.write('<script src="' + basePath + '/assets/js/gdal3.js/gdal3.js"><\/script>');
-</script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            const basePath = window.location.hostname === 'localhost' ? '' : '/sds-quick-map';
+            document.write('<link href="' + basePath + '/assets/css/main.css" rel="stylesheet">');
+            document.write('<script src="' + basePath + '/config/site-config.js"><\/script>');
+            document.write('<script src="' + basePath + '/assets/js/gdal3.js/gdal3.js"><\/script>');
+            document.write('<script src="' + basePath + '/assets/js/d3/d3.min.js"><\/script>');
+        </script>
+    </head>
+    <body>
+        <div id="header-container"></div>
+        <script>
+            fetch(`${basePath}/components/header/`)
+                .then(response => response.text())
+                .then(data => {
+                    const fragment = document
+                        .createRange()
+                        .createContextualFragment(data);
+                    document
+                        .getElementById('header-container')
+                        .appendChild(fragment);
+                });
+        </script>
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gdal3.js@2.8.1/dist/package/gdal3.js"></script>
-<script src="assets/js/gdal3.js/gdal3.js"></script> -->
-<script src="assets/js/d3/d3.min.js"></script>
-<body>
-    <div id="header-container"></div>
-    <script>
-        fetch(`${basePath}/components/header/`)
-            .then(response => response.text())
-            .then(data => {
-                const fragment = document.createRange().createContextualFragment(data);
-                document.getElementById('header-container').appendChild(fragment);
-            });
-    </script>
-
-    <div class="govuk-width-container">
-        <main class="govuk-main-wrapper" id="main-content" role="main">
-            
+        <div class="govuk-width-container">
+            <main class="govuk-main-wrapper" id="main-content" role="main">
+                
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
@@ -59,20 +59,23 @@
         </p>
     </div>
 </div>
-        </main>
-    </div>
+            </main>
+        </div>
 
+        <div id="footer-container"></div>
 
-    <div id="footer-container"></div>
-
-    <script>
-        fetch(`${basePath}/components/footer/`)
-            .then(response => response.text())
-            .then(data => {
-            //    document.getElementById('footer-container').innerHTML = data;
-            const fragment = document.createRange().createContextualFragment(data);
-                document.getElementById('footer-container').appendChild(fragment);
-            });
-    </script>
-</body>
+        <script>
+            fetch(`${basePath}/components/footer/`)
+                .then(response => response.text())
+                .then(data => {
+                    //    document.getElementById('footer-container').innerHTML = data;
+                    const fragment = document
+                        .createRange()
+                        .createContextualFragment(data);
+                    document
+                        .getElementById('footer-container')
+                        .appendChild(fragment);
+                });
+        </script>
+    </body>
 </html>
